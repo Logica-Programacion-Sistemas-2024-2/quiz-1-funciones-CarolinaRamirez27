@@ -1,12 +1,26 @@
 
 package quiz1sistemas;
 
+import java.util.Scanner;
+
 public class App {
     public static void main(String[] args) {
         
-        // Logica de solucion
-        
+        Scanner sc = new Scanner(System.in);
+        calcularValorBoleta(null, 0);
+        int cantidadBoletas = 0;
+        cantidadBoletas = sc.nextInt();
+        System.out.println("¿Que boleta desea escoger?");
+        String sillaEscogida = sc.nextLine();
+
+        while(cantidadBoletas > 0){
+            System.out.println("¿Desea otra boleta?");
+
+            cantidadBoletas = sc.nextInt();
+            
+
     }
+}
 
     /*  Implemente una funcion llamada calcularValorBoleta que cumpla con las siguientes caracteristicas
         * Recibe: 
@@ -17,6 +31,36 @@ public class App {
     */
     //------------------------------------------------------------------
     
+    public static int calcularValorBoleta(String sillaEscogida, int cantidadBoletas){
+
+        try {          
+            int resultado = 0;
+            switch (sillaEscogida) {
+
+                case "V":
+                int valorBoletaVip = 15000;
+                resultado = valorBoletaVip*cantidadBoletas;
+
+                    break;
+                
+                case "G":
+                int valorBoletaGeneral = 10000;
+                resultado = valorBoletaGeneral*cantidadBoletas;
+
+                    break;
+
+                default:
+                System.out.println("Opción invalida");
+                    break;
+            }
+
+                return resultado;
+
+
+        } catch (Exception e) {
+            return -1;
+        }
+    }
 
 
     //------------------------------------------------------------------
@@ -30,8 +74,40 @@ public class App {
     */
     //------------------------------------------------------------------
     
+    public static int calcularValorNeto(int comboSeleccionado, int cantidadCombo){
 
+        try {
 
+            int resultado = 0;
+
+            switch (comboSeleccionado) {
+                case 1:
+                int combo1 = 40000;
+                resultado = combo1*cantidadCombo;
+                    break;
+    
+                case 2:
+                int combo2 = 30000;
+                resultado = combo2*cantidadCombo;
+                    break;
+    
+                case 3:
+                int combo3 = 42000;
+                resultado = combo3*cantidadCombo;
+                    break;
+            
+                default:
+                System.out.println("Opción invalida");
+                    break; 
+
+            }
+                    return resultado;
+
+        } catch (Exception e) {
+            return -1;
+    } 
+
+    }
     //------------------------------------------------------------------
 
     /*  Implemente una funcion llamada calcularDescuentoCombo que cumpla con las siguientes caracteristicas
@@ -43,6 +119,15 @@ public class App {
     */
     //------------------------------------------------------------------
     
+    public static int(String sillaEscogida, int valorNetoCombo){
+
+        try {
+            String sillaVip = "";
+
+
+        } catch (Exception e) {
+            return -1;
+        }
 
 
     //------------------------------------------------------------------
@@ -61,3 +146,5 @@ public class App {
 
     //------------------------------------------------------------------
 }
+}
+
